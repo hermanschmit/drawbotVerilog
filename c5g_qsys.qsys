@@ -753,7 +753,7 @@
   <parameter name="dataAddrWidth" value="31" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='mem_if_lpddr2_emif.avl' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl' /><slave name='onchip_memory2.s1' start='0x20020000' end='0x2003F400' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_qsys.debug_mem_slave' start='0x20040800' end='0x20041000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='drawbot.s1' start='0x20041020' end='0x20041030' type='altera_avalon_pio.s1' /><slave name='ledr.s1' start='0x20041030' end='0x20041040' type='altera_avalon_pio.s1' /><slave name='switch.s1' start='0x20041040' end='0x20041050' type='altera_avalon_pio.s1' /><slave name='ledg.s1' start='0x20041050' end='0x20041060' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x20041060' end='0x20041070' type='altera_avalon_pio.s1' /><slave name='lpddr2_status.s1' start='0x20041070' end='0x20041080' type='altera_avalon_pio.s1' /><slave name='jtag_uart.avalon_jtag_slave' start='0x20041080' end='0x20041088' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid_qsys.control_slave' start='0x20041088' end='0x20041090' type='altera_avalon_sysid_qsys.control_slave' /><slave name='baseaddress.s1' start='0x20041090' end='0x200410A0' type='altera_avalon_pio.s1' /><slave name='onchip_picture_mem1.s1' start='0x30000000' end='0x30040000' type='altera_avalon_onchip_memory2.s1' /><slave name='TERASIC_SRAM_0.avalon_slave' start='0x40000000' end='0x40200000' type='TERASIC_SRAM.avalon_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='mem_if_lpddr2_emif.avl' start='0x0' end='0x20000000' type='altera_mem_if_lpddr2_emif.avl' /><slave name='onchip_memory2.s1' start='0x20020000' end='0x2003F400' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_qsys.debug_mem_slave' start='0x20040800' end='0x20041000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x20041000' end='0x20041020' type='altera_avalon_timer.s1' /><slave name='drawbot.s1' start='0x20041020' end='0x20041030' type='altera_avalon_pio.s1' /><slave name='ledr.s1' start='0x20041030' end='0x20041040' type='altera_avalon_pio.s1' /><slave name='switch.s1' start='0x20041040' end='0x20041050' type='altera_avalon_pio.s1' /><slave name='ledg.s1' start='0x20041050' end='0x20041060' type='altera_avalon_pio.s1' /><slave name='key.s1' start='0x20041060' end='0x20041070' type='altera_avalon_pio.s1' /><slave name='lpddr2_status.s1' start='0x20041070' end='0x20041080' type='altera_avalon_pio.s1' /><slave name='jtag_uart.avalon_jtag_slave' start='0x20041080' end='0x20041088' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid_qsys.control_slave' start='0x20041088' end='0x20041090' type='altera_avalon_sysid_qsys.control_slave' /><slave name='baseaddress.s1' start='0x20041090' end='0x200410A0' type='altera_avalon_pio.s1' /><slave name='onchip_picture_mem1.s1' start='0x30000000' end='0x30040000' type='altera_avalon_onchip_memory2.s1' /><slave name='TERASIC_SRAM_0.avalon_slave' start='0x40000000' end='0x40200000' type='TERASIC_SRAM.avalon_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -799,7 +799,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="6" />
+  <parameter name="internalIrqMaskSystemInfo" value="7" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -989,7 +989,7 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="id" value="-1091581186" />
  </module>
- <module name="timer" kind="altera_avalon_timer" version="15.1" enabled="0">
+ <module name="timer" kind="altera_avalon_timer" version="15.1" enabled="1">
   <parameter name="alwaysRun" value="false" />
   <parameter name="counterSize" value="32" />
   <parameter name="fixedPeriod" value="false" />
@@ -1156,7 +1156,6 @@
  </connection>
  <connection kind="clock" version="15.1" start="clk_125.clk" end="nios2_qsys.clk" />
  <connection kind="clock" version="15.1" start="clk_125.clk" end="sysid_qsys.clk" />
- <connection kind="clock" version="15.1" start="clk_125.clk" end="timer.clk" />
  <connection kind="clock" version="15.1" start="clk_125.clk" end="jtag_uart.clk" />
  <connection
    kind="clock"
@@ -1169,6 +1168,7 @@
  <connection kind="clock" version="15.1" start="clk_125.clk" end="ledr.clk" />
  <connection kind="clock" version="15.1" start="clk_125.clk" end="drawbot.clk" />
  <connection kind="clock" version="15.1" start="clk_125.clk" end="baseaddress.clk" />
+ <connection kind="clock" version="15.1" start="clk_125.clk" end="timer.clk" />
  <connection
    kind="clock"
    version="15.1"
@@ -1220,11 +1220,6 @@
    kind="reset"
    version="15.1"
    start="clk_125.clk_reset"
-   end="timer.reset" />
- <connection
-   kind="reset"
-   version="15.1"
-   start="clk_125.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
@@ -1267,6 +1262,11 @@
    version="15.1"
    start="clk_125.clk_reset"
    end="nios2_qsys.reset" />
+ <connection
+   kind="reset"
+   version="15.1"
+   start="clk_125.clk_reset"
+   end="timer.reset" />
  <connection
    kind="reset"
    version="15.1"
